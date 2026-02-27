@@ -2,10 +2,411 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Remove browser default margin */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Hide Scrollbar */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
+/* Scale Animation */
+@keyframes scaleUp {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+
+section {
+  width: 100%;
+}
+
+
+/* Prevent layout shift */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: left; }
+  50% { background-position: right; }
+}
+
+.animate-gradient-x {
+  background-size: 200% 100%;
+  animation: gradient-x 8s linear infinite;
+}
+
+.input {
+  @apply w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-[#8b4513] focus:border-transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+
+
+
+/* SECTION BACKGROUND */
+.founder-section {
+  width: 100%;
+  background-color: #591A13;
+  padding: 80px 40px;
+}
+
+/* CONTAINER */
+.founder-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* TEXT SIDE */
+.founder-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.founder-text h2 {
+  font-size: 42px;
+  color: #FFC700;
+  margin-bottom: 20px;
+}
+
+.founder-text p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* IMAGE SIDE */
+.founder-image-box {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.founder-image {
+  width: 340px;
+  height: 450px;
+  object-fit: cover;
+  border: 6px solid #FFC700;
+  border-radius: 25px;
+}
+
+
+
+
+/* ============================= */
+/* REVOLUTION SECTION – BRAND UI */
+/* ============================= */
+
+
+/* ============================= */
+/* ANIMATIONS (CLEAN & SOFT) */
+/* ============================= */
+
+.animate-left {
+  animation: slideLeft 0.9s ease-out forwards;
+}
+
+.animate-right {
+  animation: slideRight 0.9s ease-out forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* ========================== */
+/* ========================= */
+/* TEST KITCHEN – BRAND UI */
+/* ========================= */
+
+.tk-outer {
+  background-color: #EDEDED; /* Light neutral */
+  padding: 80px 40px;
+}
+
+/* Maroon Card Container */
+.tk-container {
+  background-color: #591A13; /* BRAND MAROON */
+  border-radius: 40px;
+  padding: 60px 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  max-width: 1200px;
+  margin: auto;
+
+  /* Bottom-left curved cut */
+  clip-path: polygon(
+    8% 0%,
+    100% 0%,
+    100% 100%,
+    25% 100%,
+    18% 92%,
+    0% 92%,
+    0% 15%
+  );
+}
+
+/* LEFT TEXT */
+.tk-content {
+  max-width: 500px;
+}
+
+.tk-title {
+  font-size: 44px;
+  font-weight: 700;
+  color: #FFC700; /* BRAND YELLOW */
+  margin-bottom: 20px;
+}
+
+.tk-text {
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* IMAGE FRAME */
+.tk-image-wrap {
+  border: 4px solid #FFC700; /* BRAND YELLOW */
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.tk-image {
+  width: 320px;   /* 👈 Image size control */
+  height: 420px;  /* 👈 Image size control */
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+
+/* ======================= */
+/* MISSION SECTION */
+/* ======================= */
+
+.mission-section {
+  background-color: #591A13; /* BRAND MAROON */
+  padding: 100px 40px;
+}
+
+.mission-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+/* LEFT WHITE CARD */
+.mission-card {
+  background-color: #FFFFFF;
+  padding: 60px;
+  border-radius: 40px;
+  max-width: 520px;
+
+  clip-path: polygon(
+    0% 0%,
+    85% 0%,
+    100% 15%,
+    100% 100%,
+    0% 100%
+  );
+}
+
+.mission-title {
+  font-size: 44px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.mission-tagline {
+  font-size: 18px;
+  color: #591A13;
+  margin-bottom: 20px;
+}
+
+.mission-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #000000;
+}
+
+/* RIGHT YELLOW FRAME */
+.mission-image-frame {
+  background-color: #FFC700; /* BRAND YELLOW */
+  padding: 30px;
+  border-radius: 40px;
+}
+
+/* Inner Maroon Background */
+.mission-inner {
+  background-color: #591A13;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+/* IMAGE */
+.mission-image {
+  width: 420px;   /* 👈 size control */
+  height: auto;
+  object-fit: contain; /* IMPORTANT: white background visible */
+  border-radius: 20px;
+}
+
+
+/* =========================== */
+/* CULTURAL FUSION SECTION */
+/* =========================== */
+
+.fusion-outer {
+  background-color: #EDEDED; /* Light neutral outer */
+  padding: 80px 40px;
+}
+
+.fusion-container {
+  background-color: #591A13; /* BRAND MAROON */
+  border-radius: 40px;
+  padding: 60px 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  max-width: 1200px;
+  margin: auto;
+
+  /* Bottom-left curved cut */
+  clip-path: polygon(
+    8% 0%,
+    100% 0%,
+    100% 100%,
+    25% 100%,
+    18% 92%,
+    0% 92%,
+    0% 15%
+  );
+}
+
+/* LEFT TEXT */
+.fusion-content {
+  max-width: 500px;
+}
+
+.fusion-title {
+  font-size: 44px;
+  font-weight: 700;
+  color: #FFC700; /* BRAND YELLOW */
+  margin-bottom: 20px;
+}
+
+.fusion-text {
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* RIGHT YELLOW FRAME */
+.fusion-image-frame {
+  background-color: #FFC700;
+  padding: 25px;
+  border-radius: 40px;
+}
+
+/* INNER MAROON BOX */
+.fusion-inner {
+  background-color: #591A13;
+  border-radius: 30px;
+  padding: 15px;
+}
+
+/* IMAGE */
+.fusion-image {
+  width: 360px;   /* 👈 size control */
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.clip-slant {
+  clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%);
 }

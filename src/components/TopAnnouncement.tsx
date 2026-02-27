@@ -1,34 +1,62 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function TopAnnouncement() {
   return (
-    <div className="w-full bg-[#f2f0ed] border-b border-gray-300">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+    <motion.div
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="w-full bg-gradient-to-r from-orange-500 via-red-500 to-pink-500"
+    >
+ <div className="max-w-7xl mx-auto px-4 py-3">
 
-        {/* Left Text */}
-        <p className="text-sm md:text-base font-semibold text-[#4b1e0f] tracking-wide">
-          JOIN WABA REWARDS. UNLOCK FREE WABA.
-        </p>
+  <div className="flex flex-col lg:flex-row 
+                  items-center justify-between 
+                  gap-4 text-center lg:text-left">
 
-        {/* Right Buttons */}
-        <div className="flex items-center gap-4 text-sm font-semibold">
-          <button className="bg-[#4b1e0f] text-white px-4 py-2 rounded hover:bg-[#6a2c16] transition">
-            CREATE AN ACCOUNT
-          </button>
+    {/* Left Text */}
+    <p className="text-sm md:text-base font-semibold text-white tracking-wide max-w-xl">
+      🎉 JOIN WAVA GRILL REWARDS. UNLOCK FREE WAVA GRILL.
+    </p>
 
-          <span className="text-gray-500">OR</span>
+    {/* Right Buttons */}
+    <div className="flex flex-wrap items-center justify-center lg:justify-end gap-3 text-sm font-semibold">
 
-          <Link
-            href="/login"
-            className="text-[#4b1e0f] underline hover:text-red-600 transition"
-          >
-            SIGN IN
-          </Link>
-        </div>
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-white text-red-600 
+                   px-5 py-2 rounded-full 
+                   shadow-md hover:shadow-xl 
+                   transition duration-300 whitespace-nowrap"
+      >
+        CREATE ACCOUNT
+      </motion.button>
 
-      </div>
+      <span className="text-white font-medium hidden sm:block">
+        OR
+      </span>
+
+      <motion.div whileHover={{ scale: 1.05 }}>
+        <Link
+          href="/login"
+          className="bg-black/20 backdrop-blur-md 
+                     text-white px-5 py-2 
+                     rounded-full 
+                     hover:bg-black/40 
+                     transition duration-300 whitespace-nowrap"
+        >
+          SIGN IN
+        </Link>
+      </motion.div>
+
     </div>
+
+  </div>
+</div>
+    </motion.div>
   );
 }

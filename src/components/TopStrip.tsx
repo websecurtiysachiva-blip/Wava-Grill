@@ -22,7 +22,7 @@ export default function TopStrip() {
           </motion.span>
 
           <span className="tracking-widest font-semibold text-white group-hover:text-[#FFC700] transition duration-300">
-            FIND MY WABA
+            FIND MY WAVA GRILL
           </span>
         </motion.div>
 
